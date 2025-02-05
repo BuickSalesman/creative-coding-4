@@ -7,10 +7,11 @@ let text;
 textArea.addEventListener("input", () => {
   text = textArea.value;
   console.log(text);
-  let span = document.createElement("span");
+  letters.innerHTML = "";
   for (const letter of text) {
+    let span = document.createElement("span");
     span.textContent = letter;
     span.classList.add("red");
+    letters.appendChild(span);
   }
-  letters.appendChild(span);
 });
