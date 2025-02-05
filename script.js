@@ -1,17 +1,15 @@
 const textArea = document.getElementById("text-area");
-const testButton = document.getElementById("test-button");
 let letters = document.getElementById("letters-container");
 
 let text;
 
-textArea.addEventListener("input", () => {
+textArea.addEventListener("keydown", (event) => {
   text = textArea.value;
-  console.log(text);
   letters.innerHTML = "";
   for (const letter of text) {
     let span = document.createElement("span");
-    span.textContent = letter;
-    span.classList.add("red");
+    span.textContent = letter === " " ? "\u00A0" + "\u00A0" : letter;
+    span.style.color = `hsl(${Math.random() * 359}, 100%, 50%)`;
     letters.appendChild(span);
   }
 });
