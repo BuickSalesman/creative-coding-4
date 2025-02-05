@@ -3,7 +3,7 @@ let letters = document.getElementById("letters-container");
 
 let text;
 
-textArea.addEventListener("keydown", (event) => {
+textArea.addEventListener("keyup", () => {
   text = textArea.value;
   letters.innerHTML = "";
   for (const letter of text) {
